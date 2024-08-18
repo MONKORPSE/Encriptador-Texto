@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com"crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Krona+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+<title>Encriptador de Texto</title>
+</head>
+<body>
+    <header>
+        <img class="logo" src="assets/Logo.png" alt="logo de alura">
+    </header>
+<main>
+    <section class="Izquierda">
+        <textarea  class="text-area"   cols="30"  rows="10" placeholder="Ingrese el texto aqui"></textarea>
+
+        <div>
+        <h6 class="información">Solo letras minúsculas y sin acentos</h6>
+    </div>
+    <div class="botones">
+        <button class="btn-encriptar" onclick="btnEncriptar()">Encriptar</button>
+        <button class="btn-desencriptar" onclick="btnDesencriptar()">Desencriptar</button>
+    </div>
+    </section>
+
+    <section  >
+        <div class="right" > 
+            <textarea class="mensaje" cols="20"  rows="10" id="myInput"></textarea>    
+            <button class="copiar" onclick="copyText()">Copiar</button> 
+        </div>   
+    </section>
+
+</main>
+    <footer class="footer">
+        <p class="p">Desarrollado por Monica Baez</p>
+    </footer>
+<script src="/script.js"></script>
+<script>
+    function copyText(){
+        let inputText = document.getElementById("myInput");
+
+        inputText.select();
+        inputText.setSelectionRange(0,99999);
+
+        navigator.clipboard.writeText(inputText.value);
+        alert("TEXTO COPIADO:" + inputText.value);
+    }
+</script>
+</body>
+</html>
